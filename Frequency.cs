@@ -43,6 +43,17 @@ namespace frequency
             {
                 Console.WriteLine($"Number {frequency.Key} occured {frequency.Value} times");
             }
+
+            Console.WriteLine("");
+            var maxValue = frequencies.Values.Max();
+
+            var keys = frequencies
+                .Where(x => x.Value == maxValue)
+                .Select(x => x.Key);
+
+            var keyString = string.Join(',', keys);
+            var outputString = $"The integer/s {keyString} occured {maxValue} times";
+            Console.WriteLine($"{outputString}");
         }
     }
 }
